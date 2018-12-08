@@ -40,10 +40,11 @@ public class Application {
 		
 		//TEST DES TOSTRING 
 		
-		System.out.println(livre1.toString());
-		System.out.println(sp1.toString());
-		System.out.println(jeu1.toString());
-		System.out.println(cd1.toString());
+//		System.out.println(livre1.toString());
+//		System.out.println(sp1.toString());
+//		System.out.println(jeu1.toString());
+//		System.out.println(cd1.toString());
+		
 		
 	}
 	

@@ -13,7 +13,11 @@ public class Produit {
 	public Panier panier;
 	
 	//Arraylist de produits :
-	private ArrayList<Produit> Produits = new ArrayList<Produit>();
+	private static ArrayList<Livre> Livres = new ArrayList<Livre>();
+	private static ArrayList<Cd> Cds = new ArrayList<Cd>();
+	private static ArrayList<Jeu> Jeux = new ArrayList<Jeu>();
+	private static ArrayList<Smartphone> Smartphones = new ArrayList<Smartphone>();
+
 
 	
 	//Constructeur de produit : 
@@ -21,10 +25,20 @@ public class Produit {
 		this.reference = reference;
 		this.prix = prix;
 		this.annee = annee;
-		Produits.add(this); //Quand un produit est créée, il est ajouté dans l'arraylist des produits
+		
+		if (this instanceof Livre){
+			Livres.add((Livre) this);
+		}
+		else if(this instanceof Cd) {
+			Cds.add((Cd) this);
+			
+		}else if(this instanceof Jeu) {
+			Jeux.add((Jeu) this);
+		}else 
+			Smartphones.add((Smartphone) this);
 	}
-
 	
+		
 	//GETTERS & SETTERS
 	public int getReference() {
 		return reference;
