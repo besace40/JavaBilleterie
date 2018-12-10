@@ -30,12 +30,14 @@ public class Client {
 		System.out.println("Le produit "+ p.getReference() + " a été supprimé du panier du client "+this.getNom());
 	}
 	
-	public void validerPanier(){
+	public void validerPanier(Entreprise e){
 		
 		int rand = ThreadLocalRandom.current().nextInt(1, 1001); // Genere nombre aléatoire de commande
-		Commande c = new Commande(rand); // Création de la commande
+		Commande c = new Commande(rand,e);
+		for (Produit p : Panier) {
+			c.ajouterProduit(p);
+		}
 		double somme = 0;
-		
 		for (Produit p : Panier) {  //Calcul du montant total de la commande
 			somme += p.getPrix();
 		}
@@ -43,7 +45,6 @@ public class Client {
 		Panier.clear(); //On vide le panier lors de sa validation
 		System.out.println("La commande du client "+this.getNom()+" a été créée et a pour numéro de commande : " + rand);
 		System.out.println("Le prix de la commande est de " + somme +"€" );
-		e.ajouterCommande(c);
 	}
 	
 	public void passerCommande(Commande c) {

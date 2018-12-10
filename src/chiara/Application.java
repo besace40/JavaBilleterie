@@ -54,13 +54,13 @@ public class Application {
 	client1.ajouterProduit(livre1);
 	client1.ajouterProduit(jeu2);
 	client1.supprimerProduit(jeu2);	
-	client1.validerPanier();
+	client1.validerPanier(e1);
 	
 	client1.ajouterProduit(cd2);
-	client1.validerPanier();
+	client1.validerPanier(e1);
 	
-	//client1.passerCommande();
-
+		//TEST LISTE COMMANDES
+	e1.listerCommandes();
 		
 	}
 	

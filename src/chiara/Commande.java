@@ -6,16 +6,26 @@ public class Commande {
 	private int nbCommande;
 	private double prix;
 	public Client client;	
-	public Entreprise e;
 	
+	
+
 	//Arraylist
 	private ArrayList<Produit> Produits = new ArrayList<Produit>();
 	
 	//Constructeur
-	public Commande(int NumeroCommande) {
+	public Commande(int nbCommande, Entreprise e) {
 		this.nbCommande = nbCommande;
+		e.ajouterCommande(this);
 	}
-	
+	//toString
+	public String toString() {
+		return "Numéro de la commande : " + this.nbCommande + 
+				"\nPropriétaire de la commande : "; //TODO
+	}
+	//Ajouter produit
+	public void ajouterProduit(Produit p) {
+		Produits.add(p);
+	}
 	//GETTER & SETTERS
 	public int getNbCommande() {
 		return nbCommande;
@@ -27,6 +37,9 @@ public class Commande {
 
 	public Client getClient() {
 		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 }
