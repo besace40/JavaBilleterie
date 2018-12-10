@@ -41,14 +41,23 @@ public class Client {
 		for (Produit p : Panier) {  //Calcul du montant total de la commande
 			somme += p.getPrix();
 		}
-		c.setPrix(somme);
+		c.setPrix(somme); //Attribue le prix calculé à la commande
+		Commandes.add(c); //Ajoute la commande à l'AL commande du client
 		Panier.clear(); //On vide le panier lors de sa validation
 		System.out.println("La commande du client "+this.getNom()+" a été créée et a pour numéro de commande : " + rand);
 		System.out.println("Le prix de la commande est de " + somme +"€" );
 	}
 	
 	public void passerCommande(Commande c) {
-		System.out.println("La commande " + c.getNbCommande() + "est passée");
+		System.out.println("\nLa commande " + c.getNbCommande() + "est passée");
+	}
+	
+	public void listerCommandes() {
+		System.out.println("\nLe client " + this.getNom() + " à passé la(les) commande(s) suivante(s) : ");
+		for (Commande c : Commandes) {
+			System.out.println(c.getNbCommande());
+			
+		}
 	}
 	 
 	
@@ -82,10 +91,6 @@ public class Client {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
-	}
-
-	public ArrayList<Commande> getCommandes() {
-		return Commandes;
 	}
 	
 }

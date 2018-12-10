@@ -61,9 +61,11 @@ public class Application {
 	
 	client2.ajouterProduit(jeu2);
 	client2.validerPanier(e1);
-		//TEST LISTE COMMANDES
+		//TEST LISTE COMMANDES ENTREPRISE
 	e1.listerCommandes();
-		
+		//TEST LISTE COMMANDE UN CLIENT
+	client1.listerCommandes();
+	client2.listerCommandes();
 	}
 	
 }
