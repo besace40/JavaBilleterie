@@ -33,7 +33,7 @@ public class Client {
 	public void validerPanier(Entreprise e){
 		
 		int rand = ThreadLocalRandom.current().nextInt(1, 1001); // Genere nombre aléatoire de commande
-		Commande c = new Commande(rand,e);
+		Commande c = new Commande(rand,e, this);
 		for (Produit p : Panier) {
 			c.ajouterProduit(p);
 		}
@@ -41,7 +41,7 @@ public class Client {
 		for (Produit p : Panier) {  //Calcul du montant total de la commande
 			somme += p.getPrix();
 		}
-		
+		c.setPrix(somme);
 		Panier.clear(); //On vide le panier lors de sa validation
 		System.out.println("La commande du client "+this.getNom()+" a été créée et a pour numéro de commande : " + rand);
 		System.out.println("Le prix de la commande est de " + somme +"€" );

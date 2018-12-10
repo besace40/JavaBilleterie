@@ -59,6 +59,8 @@ public class Application {
 	client1.ajouterProduit(cd2);
 	client1.validerPanier(e1);
 	
+	client2.ajouterProduit(jeu2);
+	client2.validerPanier(e1);
 		//TEST LISTE COMMANDES
 	e1.listerCommandes();
 		
